@@ -6,7 +6,6 @@ import numpy as np
 class Model():
     
     def __init__(self, best_fit='err_expo', custom_best_fit = None):
-        # Some config for model extensibility
         self.best_fit_func = {'err_sqr': self._best_fit_error_sqr, 'err_expo': self._best_fit_error_exponential}
         self.regression_line_dict = {'err_sqr' : lambda x: self.m*x+self.b, 'err_expo': lambda x: self.m/x + self.b}
         self.best_fit = self.best_fit_func[best_fit]
